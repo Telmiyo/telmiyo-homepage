@@ -1,12 +1,13 @@
 import { Container, Heading, SimpleGrid, Divider } from '@chakra-ui/react'
 import Section from '../components/section'
 import { GridItem, WorkGridItem } from '../components/grid-item'
-
+import Layout from '../components/layouts/article'
 import thumbKeke from '../public/images/works/keke_eyecatch.jpeg'
 import thumbAbea from '../public/images/works/abea_logo.png'
 
 const Works = () => {
 return (
+		<Layout>
 		<Container>
 				<Heading as="h3" fontSize={20} mb={4}>
 						Works
@@ -24,7 +25,8 @@ return (
 						</Section>
 				</SimpleGrid>
 		</Container>
-		)
+				</Layout>
+				)
 }
 
 export default Works

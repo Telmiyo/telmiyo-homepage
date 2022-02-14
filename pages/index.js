@@ -3,11 +3,9 @@ import {
 		Container, 
 		Box, 
 		Heading, 
-		Image, 
 		Avatar, 
 		useColorModeValue,
 		Button,
-		Link
 } from "@chakra-ui/react"
 import Paragraph from '../components/paragraph'
 import { ChevronRightIcon } from '@chakra-ui/icons'

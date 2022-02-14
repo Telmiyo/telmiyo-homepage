@@ -8,7 +8,6 @@
       "argsIgnorePattern": "ˆ_",
       "varsIgnorePattern": "ˆ_"
     }
-    ],
-		"react/display-name": 0
-  }
-}
+    ]
+		
+}}

@@ -12,7 +12,7 @@ const Work = () => {
 										Abea <Badge>2020</Badge>
 								</Title>
 								<P>
-										A jewelery Ecommerce
+										Abea is an informative website about Andrade&apos;s illness from Mallorca, Spain.
 								</P>
 								<List ml={4} my={4}>
 								<ListItem>
@@ -21,6 +21,10 @@ const Work = () => {
 												<ExternalLinkIcon mx="2px" />
 										</Link>
 								</ListItem>
+										<ListItem>
+												<Meta>Tools</Meta>
+												<span>Wordpress, Elementor</span>
+												</ListItem>
 										</List>
 						</Container>
 			</Layout>

@@ -15,12 +15,12 @@ return (
 				<SimpleGrid columns={[1, 1, 2]} gap={6}>
 						<Section>
 								<WorkGridItem id="kekebisuteria" title="KEKE" thumbnail={thumbKeke}>
-								KEKE is orem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry&apos;s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book
+										KEKE is a jewelery ecommerce website prepared to sell products with a admin panel to manage sells & analytics.
 								</WorkGridItem>
 						</Section>
 						<Section>
 								<WorkGridItem id="abea" title="ABEA" thumbnail={thumbAbea}>
-										Abea is orem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry&apos; standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book
+										Abea is an informative website about Andrade&apos;s illness from Mallorca, Spain.
 								</WorkGridItem>
 						</Section>
 				</SimpleGrid>

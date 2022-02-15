@@ -92,11 +92,7 @@ const Navbar = props => {
                                 
                                 <MenuItem as={Link}>Posts</MenuItem>
                                 </NextLink>
-                                
-                                <MenuItem as={Link} href="https://www.youtube.com/watch?v=bSMZgXzC9AA&t=190s">Design by Takuya Matsuyama</MenuItem>
-                            </MenuList>
-                            
-
+																</MenuList>
                         </Menu>
                     </Box>
                 </Box>

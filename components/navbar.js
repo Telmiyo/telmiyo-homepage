@@ -17,7 +17,7 @@ import {
 import { HamburgerIcon } from '@chakra-ui/icons'
 import ThemeToggleButton from './theme-toggle-button'
 
-const LinkItem = ({ href, path, children }) => {
+const LinkItem = ({ href, path, _target, children }) => {
     const active = path === href
     const inactiveColor = useColorModeValue('gray200', 'whiteAlpha.900')
     return (
@@ -64,12 +64,12 @@ const Navbar = props => {
                     width={{ base: 'full', md: 'auto' }}
                     alignItems="center"
                     flexGrow={1}
-                    mt={{ base: 4, nmd: 0 }}
+                    mt={{ base: 4, md: 0 }}
                 >
                     <LinkItem href="/works" path={path}>
                         Works
                     </LinkItem >
-                    <LinkItem href="/posts" path={path}>
+                    <LinkItem href="/posts">
                         Posts
                     </LinkItem>
                 </Stack>
@@ -88,9 +88,9 @@ const Navbar = props => {
                                 
                                 <MenuItem as={Link}>Works</MenuItem>
                                 </NextLink>
-                                <NextLink href="/posts" passHref>
+                                <NextLink href="https://medium.com/@telmiyodev" passHref>
                                 
-                                <MenuItem as={Link}>Posts</MenuItem>
+                                <MenuItem>Posts</MenuItem>
                                 </NextLink>
 																</MenuList>
                         </Menu>

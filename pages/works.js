@@ -7,7 +7,7 @@ import thumbAbea from '../public/images/works/abea_logo.png'
 
 const Works = () => {
 return (
-		<Layout>
+		<Layout title="Works">
 		<Container>
 				<Heading as="h3" fontSize={20} mb={4}>
 						Works

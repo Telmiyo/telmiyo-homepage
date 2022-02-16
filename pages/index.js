@@ -7,13 +7,26 @@ import {
 	useColorModeValue,
 	Button,
   SimpleGrid,
-  Badge
+		Grid,
+  Badge,
+  List,
+  Link,
+  ListItem,
+  UnorderedList,
+  Icon
 } from "@chakra-ui/react"
 import Paragraph from '../components/paragraph'
 import { ChevronRightIcon } from '@chakra-ui/icons'
 import { BioSection, BioYear } from '../components/bio'
 import Section from '../components/section'
 import Layout from '../components/layouts/article'
+import GridItem from '../components/grid-item'
+import  { 
+		IoLogoTwitter,
+		IoLogoGithub,
+		IoLogoLinkedin
+
+}from 'react-icons/io5'
 
 const Page = () => {
 	return (<Layout>
@@ -89,25 +102,54 @@ const Page = () => {
 			</Section>
 		<Section>
 				<Heading as="h3" variant="section-title">
-						⚙ Coding Languages
+				 Coding Languages
 				</Heading>
-		<SimpleGrid columns={[2,4,4]} gap={2}>
-				<Box>	
-						<Badge>c++</Badge>
-					</Box>
-				<Box>
-						<Badge> Java</Badge>
-						</Box>
-				<Box>
-						<Badge>JS</Badge>
-						</Box>
-				<Box>
-						<Badge>Dart</Badge>
-						</Box>
-				<Box>
-						<Badge>c#</Badge>
-						</Box>
-				</SimpleGrid>
+				<span>Languages:</span>
+		<UnorderedList mb={3}>
+		 <ListItem>c++</ListItem>
+		<ListItem>c#</ListItem>
+		<ListItem>dart</ListItem>
+		<ListItem>Java</ListItem>
+		<ListItem>JavaScript</ListItem>
+		</UnorderedList>
+				<span>Idle&apos;s:</span>
+		<UnorderedList>
+						<ListItem>Visual Studio / Vs Code</ListItem>
+						<ListItem>IntelliJ</ListItem>
+						<ListItem>Eclipse</ListItem>
+						<ListItem>Unity</ListItem>
+						<ListItem>Vim / Nvim</ListItem>
+			</UnorderedList>
+							
+				</Section>
+
+		<Section delay={0.3}>
+				<Heading as="h3" variant="section-title">
+				Social Media		
+				</Heading>
+				<List>
+						<ListItem>
+								<Link href="https://github.com/telmiyo" target="_blank">
+										<Button variant="ghost" colorScheme="teal" leftIcon={<Icon as={IoLogoGithub}/>}>
+												@Telmiyo
+										</Button>
+								</Link>
+						</ListItem>
+						<ListItem> 
+								<Link href="https://twitter.com/BeroizTelmo" target="_blank">
+								<Button variant="ghost" colorScheme="teal" leftIcon={<Icon as={IoLogoTwitter}/>}>
+										@t3lmo
+										</Button>
+								</Link>
+						</ListItem>
+						<ListItem>
+								<Link href="https://www.linkedin.com/in/telmo-beroiz-321716231/" target="_blank">
+										<Button variant="ghost" colorScheme="teal" leftIcon={<Icon as={IoLogoLinkedin}/>}>
+										Telmo Beroiz
+												</Button>
+								</Link>
+						</ListItem>
+				</List>
 		</Section>
 		</Container>
 	</Layout>

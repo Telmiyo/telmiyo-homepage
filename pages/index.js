@@ -10,6 +10,8 @@ import {
   Link,
   ListItem,
   UnorderedList,
+  HStack,
+  StackDivider,
   Icon
 } from "@chakra-ui/react"
 import Paragraph from '../components/paragraph'
@@ -100,23 +102,24 @@ const Page = () => {
 				<Heading as="h3" variant="section-title">
 				 Coding Languages
 				</Heading>
+				<HStack spacing='50px' divider={<StackDivider borderColor='gray.200'/>}>
+		<UnorderedList>
 				<span>Languages:</span>
-		<UnorderedList mb={3}>
 		 <ListItem>c++</ListItem>
 		<ListItem>c#</ListItem>
 		<ListItem>dart</ListItem>
 		<ListItem>Java</ListItem>
 		<ListItem>JavaScript</ListItem>
 		</UnorderedList>
-				<span>Idle&apos;s:</span>
-		<UnorderedList>
+						<UnorderedList>
+								<span>Idle&apos;s:</span>
 						<ListItem>Visual Studio / Vs Code</ListItem>
 						<ListItem>IntelliJ</ListItem>
 						<ListItem>Eclipse</ListItem>
 						<ListItem>Unity</ListItem>
 						<ListItem>Vim / Nvim</ListItem>
 			</UnorderedList>
-							
+				</HStack>
 				</Section>
 
 		<Section delay={0.3}>

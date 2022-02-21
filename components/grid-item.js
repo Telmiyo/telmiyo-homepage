@@ -45,12 +45,32 @@ export const WorkGridItem = ({ children, id, title, thumbnail }) => (
 				
 )
 
+export const CodeLangGridItem = ({ title, thumbnail }) => (
+
+		<Box w="100%" mb={4} boxSize="50px" textAlign="center">
+				<Image
+						src={thumbnail}
+						alt={title}
+						className="code-item-thumbnail"
+						placeholder="blur"
+						size="10px"
+				/>
+				<Text fontSize={10}>
+						{title}
+				</Text>
+				
+		</Box>
+)
+
 export const GridItemStyle = () => (
 
 		<Global 
 			styles={`
 						.grid-item-thumbnail{
 						border-radius: 12px;
+						}
+						.code-item-thumbnail{
+						border-radius:5px;	
 						}
 				`}
 		/>

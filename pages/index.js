@@ -9,13 +9,11 @@ import {
   List,
   Link,
   ListItem,
-  UnorderedList,
-  HStack,
-  StackDivider,
+		SimpleGrid,
   Icon
 } from "@chakra-ui/react"
 import Paragraph from '../components/paragraph'
-import { ChevronRightIcon } from '@chakra-ui/icons'
+import { ChevronRightIcon, ExternalLinkIcon } from '@chakra-ui/icons'
 import { BioSection, BioYear } from '../components/bio'
 import Section from '../components/section'
 import Layout from '../components/layouts/article'
@@ -25,6 +23,15 @@ import  {
 		IoLogoLinkedin
 
 }from 'react-icons/io5'
+import { CodeLangGridItem } from "../components/grid-item"
+
+import cplus from '../public/images/codeIcons/cplus.png'
+import csharp from '../public/images/codeIcons/csharp.png'
+import dart from '../public/images/codeIcons/dart.png'
+import java from '../public/images/codeIcons/java.png'
+import js from '../public/images/codeIcons/js.png'
+import nextjs from '../public/images/codeIcons/nextjs.png'
+import vim from '../public/images/codeIcons/vim.png'
 
 const Page = () => {
 	return (<Layout>
@@ -40,10 +47,10 @@ const Page = () => {
 			</Box>
 			<Box display={{ md: 'flex' }}>
 				<Box flexGrow={1}>
-					<Heading as="h2" variant="page-title">
+					<Heading as="h2" textAlign='center' variant="page-title">
 						Telmo Beroiz
 					</Heading>
-					<p>Videogame Developer ( Student / Developer / Designer )</p>
+						<p style={{textAlign:"center"}}>Videogame Developer ( Student / Developer / Designer )</p>
 				</Box>
 				<Box
 					flexShrink={0}
@@ -66,7 +73,7 @@ const Page = () => {
 			</Box>
 			<Section delay={0.1}>
 				<Heading as="h3" variant="section-title">
-					➵	Work
+					➵	About Me
 				</Heading>
 				<Paragraph>Telmo is a 21-year-old motivated to build digital things based on his own creativity. He likes to learn on his own, to look for new ways to get that creativity out but he also likes to share his ideas with other people and work with them in a way of learning and sharing. On this website you will find his professional career. It will show you a bit about his knowledge, interests and his current projects.</Paragraph>
 				<Box align="center" my={4}>
@@ -98,28 +105,60 @@ const Page = () => {
 					Started a Bachelor Degree in Video Game Design and Developement in Barcelona
 				</BioSection>
 			</Section>
-		<Section>
+
+				<Section delay={0.3}>
+						<Heading as="h3" variant="section-title">Experience</Heading>
+						<BioSection>
+								<BioYear>2019</BioYear>
+								Worked as a waiter.
+						</BioSection>
+						<BioSection>
+								<BioYear>2020</BioYear>
+								Worked on <Link href="http://www.andradebalear.es/" target="_blank">Abea&apos;s</Link><ExternalLinkIcon/> website. Responsible for designing and renewing the website using wordpress & Elementor.
+						</BioSection>
+						<BioSection>
+								<BioYear>2021</BioYear>		
+						Worked as a waiter.
+						</BioSection>
+						<BioSection>
+								<BioYear>2021</BioYear>
+								Started a family Business, an ecommerce about jewelry called  <Link href="https://kekebisuteria.com" target="_blank">KEKE. </Link><ExternalLinkIcon/>
+						</BioSection>
+				</Section>
+
+		<Section delay={0.3}>
 				<Heading as="h3" variant="section-title">
-				 Coding Languages
+				 Languages & Frameworks
 				</Heading>
-				<HStack spacing='50px' divider={<StackDivider borderColor='gray.200'/>}>
-		<UnorderedList>
-				<span>Languages:</span>
-		 <ListItem>c++</ListItem>
-		<ListItem>c#</ListItem>
-		<ListItem>dart</ListItem>
-		<ListItem>Java</ListItem>
-		<ListItem>JavaScript</ListItem>
-		</UnorderedList>
-						<UnorderedList>
-								<span>Idle&apos;s:</span>
-						<ListItem>Visual Studio / Vs Code</ListItem>
-						<ListItem>IntelliJ</ListItem>
-						<ListItem>Eclipse</ListItem>
-						<ListItem>Unity</ListItem>
-						<ListItem>Vim / Nvim</ListItem>
-			</UnorderedList>
-				</HStack>
+
+				<SimpleGrid columns={[4,4]} spacing={2} mt={6} >
+						<Section>
+								<CodeLangGridItem title="C++" thumbnail={cplus}>
+								</CodeLangGridItem>
+						</Section>
+						<Section>
+								<CodeLangGridItem title="C#" thumbnail={csharp}>
+								</CodeLangGridItem>
+								</Section>
+						<Section>
+								<CodeLangGridItem title="Dart & Flutter" thumbnail={dart}>
+								</CodeLangGridItem>
+						</Section>
+								<CodeLangGridItem title="Java" thumbnail={java}>
+								</CodeLangGridItem>
+						<Section>
+								<CodeLangGridItem title="Js" thumbnail={js}>
+								</CodeLangGridItem>
+						</Section>
+						<Section>
+								<CodeLangGridItem title="NextJS" thumbnail={nextjs}>
+								</CodeLangGridItem>
+						</Section>
+						<Section>
+								<CodeLangGridItem title="Vim" thumbnail={vim}>
+								</CodeLangGridItem>
+						</Section>
+				</SimpleGrid>	
 				</Section>
 
 		<Section delay={0.3}>

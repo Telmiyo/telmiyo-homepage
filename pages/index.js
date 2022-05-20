@@ -6,23 +6,24 @@ import {
 	Avatar,
 	useColorModeValue,
 	Button,
-  List,
-  Link,
-  ListItem,
-		SimpleGrid,
-  Icon
+	Link,
+	SimpleGrid,
+	Icon,
+	HStack
 } from "@chakra-ui/react"
 import Paragraph from '../components/paragraph'
 import { ChevronRightIcon, ExternalLinkIcon } from '@chakra-ui/icons'
 import { BioSection, BioYear } from '../components/bio'
 import Section from '../components/section'
 import Layout from '../components/layouts/article'
-import  { 
-		IoLogoTwitter,
-		IoLogoGithub,
-		IoLogoLinkedin
+import { WorkGridItem } from '../components/grid-item'
 
-}from 'react-icons/io5'
+import {
+	IoLogoTwitter,
+	IoLogoGithub,
+	IoLogoLinkedin
+
+} from 'react-icons/io5'
 import { CodeLangGridItem } from "../components/grid-item"
 
 import cplus from '../public/images/codeIcons/cplus.png'
@@ -32,6 +33,8 @@ import java from '../public/images/codeIcons/java.png'
 import js from '../public/images/codeIcons/js.png'
 import nextjs from '../public/images/codeIcons/nextjs.png'
 import vim from '../public/images/codeIcons/vim.png'
+import thumbKeke from '../public/images/works/keke_eyecatch.jpeg'
+import thumbSexenni from '../public/images/works/sexenni_logo.png'
 
 const Page = () => {
 	return (<Layout>
@@ -45,12 +48,13 @@ const Page = () => {
 			>
 				Hello, I&apos;m a video game student from the Basque Country
 			</Box>
+
 			<Box display={{ md: 'flex' }}>
 				<Box flexGrow={1}>
 					<Heading as="h2" textAlign='center' variant="page-title">
 						Telmo Beroiz
 					</Heading>
-						<p style={{textAlign:"center"}}>Videogame Developer ( Student / Developer / Designer )</p>
+					<p style={{ textAlign: "center" }}>Videogame Developer ( Student / Developer / Designer )</p>
 				</Box>
 				<Box
 					flexShrink={0}
@@ -71,6 +75,7 @@ const Page = () => {
 					/>
 				</Box>
 			</Box>
+
 			<Section delay={0.1}>
 				<Heading as="h3" variant="section-title">
 					➵	About Me
@@ -106,89 +111,93 @@ const Page = () => {
 				</BioSection>
 			</Section>
 
-				<Section delay={0.3}>
-						<Heading as="h3" variant="section-title">Experience</Heading>
-						<BioSection>
-								<BioYear>2019</BioYear>
-								Worked as a waiter.
-						</BioSection>
-						<BioSection>
-								<BioYear>2020</BioYear>
-								Worked on <Link href="http://www.andradebalear.es/" target="_blank">Abea&apos;s</Link><ExternalLinkIcon/> website. Responsible for designing and renewing the website using wordpress & Elementor.
-						</BioSection>
-						<BioSection>
-								<BioYear>2021</BioYear>		
-						Worked as a waiter.
-						</BioSection>
-						<BioSection>
-								<BioYear>2021</BioYear>
-								Started a family Business, an ecommerce about jewelry called  <Link href="https://kekebisuteria.com" target="_blank">KEKE. </Link><ExternalLinkIcon/>
-						</BioSection>
-				</Section>
 
-		<Section delay={0.3}>
+			<Heading as="h3" variant="section-title">
+				Experience
+			</Heading>
+
+			<BioSection>
+				<BioYear>2019</BioYear>
+				Worked as a waiter.
+			</BioSection>
+			<BioSection>
+				<BioYear>2020</BioYear>
+				Worked on <Link href="http://www.andradebalear.es/" target="_blank">Abea&apos;s</Link><ExternalLinkIcon /> website. Responsible for designing and renewing the website using wordpress & Elementor.
+			</BioSection>
+			<BioSection>
+				<BioYear>2021</BioYear>
+				Worked as a waiter.
+			</BioSection>
+			<BioSection>
+				<BioYear>2021</BioYear>
+				Started a family Business, an ecommerce about jewelry called  <Link href="https://kekebisuteria.com" target="_blank">KEKE. </Link><ExternalLinkIcon />
+			</BioSection>
+
+			<Heading as="h3" variant="section-title">
+				Works
+			</Heading>
+
+			<SimpleGrid columns={[1, 1, 2]} gap={6}>
+					<Section>
+						<WorkGridItem id="kekebisuteria" title="KEKE" thumbnail={thumbKeke}>
+							KEKE is a jewelery ecommerce website prepared to sell products with a admin panel to manage sells & analytics.
+						</WorkGridItem>
+					</Section>
+					<Section>
+						<WorkGridItem id="sexenni" title="Sexenni" thumbnail={thumbSexenni}>
+							Sexenni is a young people Catalan music group from Lleida
+						</WorkGridItem>
+					</Section>
+				</SimpleGrid>
+
+				<Box align="center" my={4}>
+					<NextLink href="/works">
+						<Button rightIcon={<ChevronRightIcon />} colorScheme="teal">
+							My Works
+						</Button>
+					</NextLink>
+				</Box>
+
+			<Section delay={0.3}>
 				<Heading as="h3" variant="section-title">
-				 Languages & Frameworks
+					Languages & Frameworks
 				</Heading>
 
-				<SimpleGrid columns={[4,4]} spacing={2} mt={6} >
-						<Section>
-								<CodeLangGridItem title="C++" thumbnail={cplus}>
-								</CodeLangGridItem>
-						</Section>
-						<Section>
-								<CodeLangGridItem title="C#" thumbnail={csharp}>
-								</CodeLangGridItem>
-								</Section>
-						<Section>
-								<CodeLangGridItem title="Dart & Flutter" thumbnail={dart}>
-								</CodeLangGridItem>
-						</Section>
-								<CodeLangGridItem title="Java" thumbnail={java}>
-								</CodeLangGridItem>
-						<Section>
-								<CodeLangGridItem title="Js" thumbnail={js}>
-								</CodeLangGridItem>
-						</Section>
-						<Section>
-								<CodeLangGridItem title="NextJS" thumbnail={nextjs}>
-								</CodeLangGridItem>
-						</Section>
-						<Section>
-								<CodeLangGridItem title="Vim" thumbnail={vim}>
-								</CodeLangGridItem>
-						</Section>
-				</SimpleGrid>	
-				</Section>
+				<SimpleGrid columns={[4, 4]} spacing={2} mt={6} >
+					<CodeLangGridItem title="C++" thumbnail={cplus} />
+					<CodeLangGridItem title="C#" thumbnail={csharp} />
+					<CodeLangGridItem title="Dart & Flutter" thumbnail={dart} />
+					<CodeLangGridItem title="Java" thumbnail={java} />
+					<CodeLangGridItem title="Js" thumbnail={js} />
+					<CodeLangGridItem title="NextJS" thumbnail={nextjs} />
+					<CodeLangGridItem title="Vim" thumbnail={vim} />
+				</SimpleGrid>
+			</Section>
 
-		<Section delay={0.3}>
+			<Section delay={0.3}>
 				<Heading as="h3" variant="section-title">
-				Social Media		
+					Social Media
 				</Heading>
-				<List>
-						<ListItem>
-								<Link href="https://github.com/telmiyo" target="_blank">
-										<Button variant="ghost" colorScheme="teal" leftIcon={<Icon as={IoLogoGithub}/>}>
-												@Telmiyo
-										</Button>
-								</Link>
-						</ListItem>
-						<ListItem> 
-								<Link href="https://twitter.com/BeroizTelmo" target="_blank">
-								<Button variant="ghost" colorScheme="teal" leftIcon={<Icon as={IoLogoTwitter}/>}>
-										@t3lmo
-										</Button>
-								</Link>
-						</ListItem>
-						<ListItem>
-								<Link href="https://www.linkedin.com/in/telmo-beroiz-321716231/" target="_blank">
-										<Button variant="ghost" colorScheme="teal" leftIcon={<Icon as={IoLogoLinkedin}/>}>
-										Telmo Beroiz
-												</Button>
-								</Link>
-						</ListItem>
-				</List>
-		</Section>
+
+				<HStack spacing={15}>
+
+					<Link href="https://github.com/telmiyo" target="_blank">
+						<Button variant="ghost" colorScheme="teal" leftIcon={<Icon as={IoLogoGithub} />}>
+							@Telmiyo
+						</Button>
+					</Link>
+					<Link href="https://twitter.com/BeroizTelmo" target="_blank">
+						<Button variant="ghost" colorScheme="teal" leftIcon={<Icon as={IoLogoTwitter} />}>
+							@t3lmo
+						</Button>
+					</Link>
+					<Link href="https://www.linkedin.com/in/telmo-beroiz-321716231/" target="_blank">
+						<Button variant="ghost" colorScheme="teal" leftIcon={<Icon as={IoLogoLinkedin} />}>
+							Telmo Beroiz
+						</Button>
+					</Link>
+				</HStack>
+			</Section>
 		</Container>
 	</Layout>
 	)

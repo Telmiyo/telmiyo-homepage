@@ -17,7 +17,7 @@ import {
 import { HamburgerIcon } from '@chakra-ui/icons'
 import ThemeToggleButton from './theme-toggle-button'
 
-const LinkItem = ({ href, path, _target, children }) => {
+const LinkItem = ({ href, path, children }) => {
     const active = path === href
     const inactiveColor = useColorModeValue('gray200', 'whiteAlpha.900')
     return (
@@ -25,7 +25,7 @@ const LinkItem = ({ href, path, _target, children }) => {
             <Link p={2}
                 bg={active ? 'grassTeal' : undefined}
                 color={active ? '#202023' : inactiveColor}
-						>
+            >
                 {children}
             </Link>
         </NextLink>
@@ -44,18 +44,18 @@ const Navbar = props => {
             zIndex={1}
             {...props}
         >
-            <Container 
-								display="flex" 
-								p={2} 
-								maxW="container.md" 
-								wrap="wrap" 
-								align="center" 
-								justify="space-between"
-						>
+            <Container
+                display="flex"
+                p={2}
+                maxW="container.md"
+                wrap="wrap"
+                align="center"
+                justify="space-between"
+            >
                 <Flex align="center" mr={5}>
                     <Heading as="h1" size="lg" letterSpacing={'tighter'}>
-												<Logo />
-										</Heading>
+                        <Logo />
+                    </Heading>
                 </Flex>
 
                 <Stack
@@ -78,21 +78,21 @@ const Navbar = props => {
                     <ThemeToggleButton />
                     <Box ml={2} display={{ base: 'inline-block', md: 'none' }}>
                         <Menu>
-                            <MenuButton as={IconButton} icon={<HamburgerIcon />} variant='outline' aria-label="Options"/>
+                            <MenuButton as={IconButton} icon={<HamburgerIcon />} variant='outline' aria-label="Options" />
                             <MenuList>
                                 <NextLink href="/" passHref>
-                                
-                                <MenuItem as={Link}>About</MenuItem>
+
+                                    <MenuItem as={Link}>About</MenuItem>
                                 </NextLink>
                                 <NextLink href="/works" passHref>
-                                
-                                <MenuItem as={Link}>Works</MenuItem>
+
+                                    <MenuItem as={Link}>Works</MenuItem>
                                 </NextLink>
                                 <NextLink href="https://medium.com/@telmiyodev" passHref>
-                                
-                                <MenuItem>Posts</MenuItem>
+
+                                    <MenuItem>Posts</MenuItem>
                                 </NextLink>
-																</MenuList>
+                            </MenuList>
                         </Menu>
                     </Box>
                 </Box>
